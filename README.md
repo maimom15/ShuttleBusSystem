@@ -1,2 +1,2 @@
 # ShuttleBusSystem
-Shuttle Bus System
+Shuttle Bus System of KIT
