@@ -18,7 +18,7 @@ $(document).ready(function(){
 				$("#ScheduleSession").show();
 			}
 			*/
-			
+  	
 				//BookingSession
 				$("#Round").show();
 				$("#One").hide();
@@ -30,23 +30,41 @@ $(document).ready(function(){
 				$("input:radio[id=oneWay]").click(function() {
 				 	$("#One").show();
 					$("#Round").hide();
+					autoSelect('one');
 				});
 				
-				//select Model
-				$('#toDes').on('change', function() {
-					  alert( this.value );
-					})
 					
 					//date picker
 				  $('.datepicker').pickadate({
 				    selectMonths: true, // Creates a dropdown to control month
 				    selectYears: 15 // Creates a dropdown of 15 years to control year
 				  });
-       
-					
-					//booking
+				  	autoSelect('round');
+					function autoSelect(id){
+						$('#fromDes_'+id).on('change', function() {
+							  var name = this.value ;
+							  if(name=="Kirirom"){		  
+								  var select='<select id="toDes_'+id+'"><option value="Phnom Penh">Phnom Penh</option></select>';
+								  document.getElementById("to_"+id).innerHTML = select;
+								  $('#toDes_'+id).material_select();
+							  }
+							  if(name=="Phnom Penh"){
+								  var select1='<select id="toDes_'+id+'"><option value="Kirirom">Kirirom</option></select>';
+								  document.getElementById("to_"+id).innerHTML = select1;
+								  $('#toDes_'+id).material_select();
+							  }
+							})
+					}
+				  
+				
+				  	
+				  	
+						
 					$(".bookNow").click(function(){
 						  var optionWay=$('input[name=option_way]:checked').val();
+						 
+						  var KTP=null;
+						  var PTK=null;
 					      var destinationId = $('#fromDes').find(":selected").text()+" to "+$('#toDes').find(":selected").text() ;
 					      var date1 = new Pikaday({ field: $('.fromDate')[0] });  
 					      var date2 = new Pikaday({ field: $('.toDate')[0] });
@@ -77,5 +95,8 @@ $(document).ready(function(){
 								});
 					      	}
 					    });
+					
+					$('.modal').modal();
+			
 	
 				});

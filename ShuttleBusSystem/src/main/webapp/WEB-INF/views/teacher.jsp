@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- Compiled and minified CSS -->
@@ -14,13 +14,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
 
-
-	<spring:url value="/resources/css/site.css" var="site" />
-	<link href="${site}" rel="stylesheet" />
 	<spring:url value="/resources/js/teacher.js" var="teacherjs" />
 	<script src="${teacherjs}" type="text/javascript"></script>
 	<spring:url value="/resources/css/teacher.css" var="teacher" />
 	<link href="${teacher}" rel="stylesheet" />
+	
 	
 	
 	
@@ -60,20 +58,18 @@
 	  <div id="Round" class="row">
 	  <div>
 	  	<div class="col s12 m6 l3">
-	   		<div class="input-field s6">      
-		      <select id="fromDes" class="validate">
+	   		<div id="from_round" class="input-field s6">      
+		      <select id="fromDes_round" class="validate">
 		        <option value="" disabled selected>From</option>
-		        <option id="selectf1" value="1">Kirirom</option>
-		        <option id="selectf2" value="2">Phnom Penh</option>
+		        <option id="selectf1" value="Kirirom">Kirirom</option>
+		        <option id="selectf2" value="Phnom Penh">Phnom Penh</option>
 		      </select>
 		    </div>
 	   	</div>
-	    <div class="col s12 m6 l3">
-	    	<div class="input-field s6">      
-		      <select id="toDes" class="validate">
+	    <div  class="col s12 m6 l3">
+	    	<div id="to_round"  class="input-field s6">      
+		      <select id="toDes_round" class="validate">
 		        <option value="" disabled selected>To</option>
-		        <option id="selectt1" value="1">Kirirom</option>
-		        <option id="selectt2" value="2">Phnom Penh</option>
 		      </select>
 		    </div>
 	    </div>
@@ -85,24 +81,23 @@
 	   	</div>
 	  </div>
 	  <div id="One" class="row">
-		<div class="col s12 m6 l3">
-	   		<div class="input-field s6">      
-		      <select class="validate">
+	  	<div class="col s12 m6 l3">
+	   		<div id="from_one" class="input-field s6">      
+		      <select id="fromDes_one" class="validate">
 		        <option value="" disabled selected>From</option>
-		        <option value="1">Kirirom</option>
-		        <option value="2">Phnom Penh</option>
+		        <option id="selectf1" value="Kirirom">Kirirom</option>
+		        <option id="selectf2" value="Phnom Penh">Phnom Penh</option>
 		      </select>
 		    </div>
 	   	</div>
-	    <div class="col s12 m6 l3">
-	    	<div class="input-field s6">      
-		      <select class="validate">
+	    <div  class="col s12 m6 l3">
+	    	<div id="to_one"  class="input-field s6">      
+		      <select id="toDes_one" class="validate">
 		        <option value="" disabled selected>To</option>
-		        <option value="1">Kirirom</option>
-		        <option value="2">Phnom Penh</option>
 		      </select>
 		    </div>
 	    </div>
+
 	    <div class="col s12 m6 l3"><input type="text" id="datepicker" class="fromDate" ></div>
 		<div class="col s12 m6 l3"><a class="btn bookOne bookNow">Book Now</a></div>    
 </div>
@@ -334,7 +329,9 @@
 		  </div>
 </div>		  
 <!--footer  -->
+
  <footer class="page-footer">
+ 
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
@@ -359,6 +356,17 @@
             </div>
           </div>
         </footer>
+<select name="column_select" id="column_select">
+    <option value="col1">1 column</option>
+    <option value="col2">2 column</option>
+    
+</select>
 
+<div id="ll">
+<select name="layout_select" id="layout_select" > 
+    <option value="none" id="ii">none</option>
+</select>
+</div>
 </body>
+
 </html>
