@@ -14,265 +14,104 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
 
-	
 
+	<spring:url value="/resources/css/site.css" var="site" />
+	<link href="${site}" rel="stylesheet" />
+	<spring:url value="/resources/js/teacher.js" var="teacherjs" />
+	<script src="${teacherjs}" type="text/javascript"></script>
 	<spring:url value="/resources/css/teacher.css" var="teacher" />
 	<link href="${teacher}" rel="stylesheet" />
-	<spring:url value="/resources/images/name.jpg" var="logo" />
-	<!-- 
-	<spring:url value="/resources/JavaScript/teacher.js" var="student" />
-	<script src="${student}"></script>
-	 -->
-	
 	
 	
 	
 </head>
 <body>
-<!-- Header -->
+<!--Header-->
 <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper container">
         <a href="#!" class="brand-logo">Logo</a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="#studentPermission">Student Permission: <span class="new badge" data-badge-caption="">4</span></a></li>
-        <li><a href="#">
-		        <table class="profile">
-				  <tr class="trtd">
-				    <td class="trtd" rowspan="2"><img src="https://s-media-cache-ak0.pinimg.com/736x/64/fb/c9/64fbc98e98bebd0c06dc5f9345724658.jpg" alt="" class="responsive-img circle"></td>
-				    <td class="trtd"><span id="username">Mai Mom</span></td>
-				  </tr>
-		        </table>
-            </a>
-         </li>
-        <li><a class="btn">Log out</a></li>
+          <li><p>No.of Ticket available: <span class="new badge" data-badge-caption="/18">4</span></p></li>
+          <li><a href="#"><img src="https://s-media-cache-ak0.pinimg.com/736x/64/fb/c9/64fbc98e98bebd0c06dc5f9345724658.jpg" alt="" class="responsive-img circle"></a></li>
+          <li><a class="username">Mai Mom</a></li>
+          <li><a class="btn">Log out</a></li>
         </ul>
       </div>
     </nav>
   </div>
-  <!-- Modal Structure of Student Permission -->
-	  <div id="studentPermission" class="modal modal-fixed-footer">
-		    <div class="modal-content">
-		      <h5 class="center">List of Passengers</h5>
-		      <table class="centered highlight">
-		        <thead>
-		          <tr>
-		              <th>No.</th>
-		              <th>UserID</th>
-		              <th>Name</th>
-		              <th>Batch</th>
-		              <th>Role</th>
-		              <th>Seat Number</th>
-		              <th>Status</th>
-		          </tr>
-		        </thead>
-		
-		        <tbody>
-		          <tr>
-		          	  <td>1</td>
-		              <td>KITSE1410</td>
-		              <td>Heng Visal</td>
-		              <td>01</td>
-		              <td>Student</td>
-		              <td>01</td>
-		              <td><a class="waves-effect waves-light btn">Cancel</a></td>
-		          </tr>
-		          <tr>
-		          	  <td>2</td>
-		              <td>KITSE1410</td>
-		              <td>Heng Visal</td>
-		              <td>01</td>
-		              <td>Student</td>
-		              <td>01</td>
-		              <td><a class="waves-effect waves-light btn">Cancel</a></td>
-		          </tr>
-		          <tr>
-		          	  <td>3</td>
-		              <td>KITSE1410</td>
-		              <td>Heng Visal</td>
-		              <td>01</td>
-		              <td>Student</td>
-		              <td>01</td>
-		              <td><a class="waves-effect waves-light btn">Cancel</a></td>
-		          </tr>
-		          <tr>
-		          	  <td>4</td>
-		              <td>KITSE1410</td>
-		              <td>Heng Visal</td>
-		              <td>01</td>
-		              <td>Student</td>
-		              <td>01</td>
-		              <td><a class="waves-effect waves-light btn">Cancel</a></td>
-		          </tr>
-		          <tr>
-		          	  <td>5</td>
-		              <td>KITSE1410</td>
-		              <td>Heng Visal</td>
-		              <td>01</td>
-		              <td>Student</td>
-		              <td>01</td>
-		              <td><a class="waves-effect waves-light btn">Cancel</a></td>
-		          </tr>
-		          <tr>
-		          	  <td>6</td>
-		              <td>KITSE1410</td>
-		              <td>Heng Visal</td>
-		              <td>01</td>
-		              <td>Student</td>
-		              <td>01</td>
-		              <td><a class="waves-effect waves-light btn">Cancel</a></td>
-		          </tr>
-		          <tr>
-		          	  <td>7</td>
-		              <td>KITSE1410</td>
-		              <td>Heng Visal</td>
-		              <td>01</td>
-		              <td>Student</td>
-		              <td>01</td>
-		              <td><a class="waves-effect waves-light btn">Cancel</a></td>
-		          </tr>
-		          <tr>
-		          	  <td>8</td>
-		              <td>KITSE1410</td>
-		              <td>Heng Visal</td>
-		              <td>01</td>
-		              <td>Student</td>
-		              <td>01</td>
-		              <td><a class="waves-effect waves-light btn">Cancel</a></td>
-		          </tr>
-		          <tr>
-		          	  <td>9</td>
-		              <td>KITSE1410</td>
-		              <td>Heng Visal</td>
-		              <td>01</td>
-		              <td>Student</td>
-		              <td>01</td>
-		              <td><a class="waves-effect waves-light btn">Cancel</a></td>
-		          </tr>
-		        </tbody>
-		      </table>
-		    </div>
-		    <div class="modal-footer">
-		      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-		    </div>
-		  </div>
+<!--body-->
+<div id="BookingSession">
+<div  class="container"> 
+	<h4 class="center-align title"><b>vKirirom Shuttle Bus</b></h4>
+	<p class="center-align title">Visit our restaurant and savour our dishes special our chef has to offer and or stay in one of our innovative rooms</p>
+
+	  <form action="#">
+	    <span>
+	    	<input class="with-gap" name="option_way" type="radio" id="roundWay" value="RoundWay" checked="checked" />
+	        <label for="roundWay">Round Ways</label>
+	    </span>
+	    <span>
+	    	<input class="with-gap" name="option_way" type="radio" id="oneWay" value="OneWay"/>
+	        <label for="oneWay">One Way</label>
+	    </span>	  
+	  </form>
  
-  <!-- Body -->
-
-   <div id="Booking" class="row">
-        <div class="col s12 m4 l4 offset-l4">
-
-  
-          <div id="1" class="card darken-1">
-            <div class="card-content gray-text">
-             <h5>Choose Your Booking Seat:</h5>
-              <form action="#">
-			    <p>
-			      <input name="group" type="radio" id="round"  value="round_way" checked/>
-			      <label for="round">Round way Shuttle Bus</label>
-			    </p>
-			    <p>
-			      <input name="group" type="radio" id="one" value="one_way" />
-			      <label for="one">One way Shuttle Bus</label>
-			    </p>
-			  </form>
-            </div>
-            <div class="card-action right-align link">
-              <a id="next2" class="btn waves-effect waves-light" href="#">Next</a>
-            </div>
-          </div>
-       
-   
-          <div id="2" class="card darken-1">
-            <div class="card-content gray-text">
-            
-            <table>		
-		      <tr>
-		      	<td>
-		      		<h6><b>Destination:</b> <span class="destination">Kirirom to Phnom Penh</span></h6>
-	             	<input type="date" class="datepicker">
-		      	</td>
-		      </tr>
-		      <tr>
-		        <td>
-		        	<h6><b>Destination:</b> <span class="destination">Phnom Penh to Kirirom</span></h6>
-	             	<input type="date" class="datepicker" id="date" placeholder="Select date">
-	             	
-		      	</td>   
-		      </tr>
-		             
-      		</table>
-            
-            </div>
-            <div class="card-action right-align link">
-              <a id="next1" class="btn waves-effect waves-light" href="#">Cancel</a>
-              <a id="next1" class="btn waves-effect waves-light" href="#">Book</a>
-            </div>
-          </div>
-          
- 
-          <div id="3" class="card darken-1">
-            <div class="card-content gray-text">
-             <h5>Choose the Destination:</h5>
-              <form action="#">
-			    <p>
-			      <input name="group1" type="radio" id="KTP"  value="KTP" checked/>
-			      <label for="KTP">Kiriron To Phnom Penh</label>
-			    </p>
-			    <p>
-			      <input name="group1" type="radio" id="PTK" value="PTK" />
-			      <label for="PTK">Phnom Penh to Kirirom</label>
-			    </p>
-			  </form>
-            </div>
-            <div class="card-action right-align link">
-              <a id="next1" class="btn waves-effect waves-light next submit" href="#">Cancel</a>
-              <a id="next4" class="btn waves-effect waves-light next submit" href="#">Next</a>
-            </div>
-          </div>
-
-          <div id="4" class="card darken-1">
-            <div class="card-content gray-text">
-             <table>		
-		      <tr>
-		      	<td>
-		      		<h6><b>Destination:</b> <span class="destination">Kirirom to Phnom Penh</span></h6>
-	             	<input type="date" class="datepicker">
-		      	</td>
-		      </tr>		             
-      		</table>
-            </div>
-            <div class="card-action right-align link">
-              <a id="next3" class="btn waves-effect waves-light" href="#">Back</a>
-              <a id="next1" class="btn waves-effect waves-light" href="#">Cancel</a>
-              <a id="next1" class="btn waves-effect waves-light" href="#">Book</a>
-            </div>
-          </div>
-                   
-          <div id="5" class="card darken-1">
-            <div class="card-content gray-text">
-             <table>		
-		      <tr>
-		        <td>
-		        	<h6><b>Destination:</b> <span class="destination">Phnom Penh to Kirirom</span></h6>
-	             	<input type="date" class="datepicker" id="date" placeholder="Select date">
-	             	
-		      	</td>   
-		      </tr>
-		             
-      		</table>
-            </div>
-            <div class="card-action right-align link">
-              <a id="next3" class="btn waves-effect waves-light" href="#">Back</a>
-              <a id="next1" class="btn waves-effect waves-light" href="#">Cancel</a>
-              <a id="next1" class="btn waves-effect waves-light" href="#">Book</a>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-   <div id="Schedule" class="container">
-   	 <h5 class="center">Schedule for this Week</h5>
+	  <div id="Round" class="row">
+	  <div>
+	  	<div class="col s12 m6 l3">
+	   		<div class="input-field s6">      
+		      <select id="fromDes" class="validate">
+		        <option value="" disabled selected>From</option>
+		        <option id="selectf1" value="1">Kirirom</option>
+		        <option id="selectf2" value="2">Phnom Penh</option>
+		      </select>
+		    </div>
+	   	</div>
+	    <div class="col s12 m6 l3">
+	    	<div class="input-field s6">      
+		      <select id="toDes" class="validate">
+		        <option value="" disabled selected>To</option>
+		        <option id="selectt1" value="1">Kirirom</option>
+		        <option id="selectt2" value="2">Phnom Penh</option>
+		      </select>
+		    </div>
+	    </div>
+	    <div class="col s12 m6 l3"><input type="date" class="datepicker"></div>
+		<div class="col s12 m6 l3"><input type="date" class="datepicker"></div>
+	  </div>
+	   	<div class="row">  		
+		<a class="right btn bookRound bookNow">button</a>
+	   	</div>
+	  </div>
+	  <div id="One" class="row">
+		<div class="col s12 m6 l3">
+	   		<div class="input-field s6">      
+		      <select class="validate">
+		        <option value="" disabled selected>From</option>
+		        <option value="1">Kirirom</option>
+		        <option value="2">Phnom Penh</option>
+		      </select>
+		    </div>
+	   	</div>
+	    <div class="col s12 m6 l3">
+	    	<div class="input-field s6">      
+		      <select class="validate">
+		        <option value="" disabled selected>To</option>
+		        <option value="1">Kirirom</option>
+		        <option value="2">Phnom Penh</option>
+		      </select>
+		    </div>
+	    </div>
+	    <div class="col s12 m6 l3"><input type="text" id="datepicker" class="fromDate" ></div>
+		<div class="col s12 m6 l3"><a class="btn bookOne bookNow">Book Now</a></div>    
+</div>
+</div>
+</div>
+<!-- Schedule  -->
+<div id="ScheduleSession">
+	<div class="container" >
+   	 <h5 class="center sch">Schedule for this Week</h5>
       <table class="centered highlight">
         <thead>
           <tr>
@@ -294,11 +133,11 @@
             <td>Fri, 09/june/2017</td>
             <td>B001</td>
             <td>Mr.Heng</td>
-            <td>Alvin</td>
             <td>Kirirom to Phnom Penh</td>
             <td>24</td>
             <td>02</td>
             <td>00</td>
+            <td>02</td>
             <td>20</td>
             <td><a href="#modal1">detail</a></td>
           </tr>
@@ -306,11 +145,11 @@
             <td>Fri, 09/june/2017</td>
             <td>B001</td>
             <td>Mr.Heng</td>
-            <td>Alvin</td>
             <td>Kirirom to Phnom Penh</td>
             <td>24</td>
             <td>02</td>
             <td>00</td>
+            <td>02</td>
             <td>20</td>
             <td><a href="#modal1">detail</a></td>
           </tr>
@@ -318,17 +157,17 @@
             <td>Fri, 09/june/2017</td>
             <td>B001</td>
             <td>Mr.Heng</td>
-            <td>Alvin</td>
             <td>Kirirom to Phnom Penh</td>
             <td>24</td>
             <td>02</td>
             <td>00</td>
+            <td>02</td>
             <td>20</td>
             <td><a href="#modal1">detail</a></td>
           </tr>
         </tbody>
       </table>
-      <!-- Modal Structure of Passenger Detail -->
+      <!-- Modal Structure -->
 	  <div id="modal1" class="modal modal-fixed-footer">
 		    <div class="modal-content">
 		      <h5 class="center">List of Passengers</h5>
@@ -437,7 +276,7 @@
          
       <div class="row">
       <div class="col s12 emergencyRequest"> 
-          <a href="#emergencyModals">Request Emergency Booking</a></div>
+          <a id="emer" href="#emergencyModals">Request Emergency Booking</a></div>
       </div>
        <!-- Emergency -->
        <!-- Modal Structure -->
@@ -492,74 +331,34 @@
 		      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
 		    </div>
 		  </div>  
-		  
-     </div> 
-         
-         
-         
-         
-      
-	<script type="text/javascript">
-	var day = new Date().getDay();;
-	console.log(day);
-	if(day>1&&day<4){
-		$("#Booking").show();
-		$("#Schedule").hide();
-	}
-	else{
-		$("#Booking").hide();
-		$("#Schedule").show();
-	}
-	
-	
-	//Slide Page
-	$("#2").hide();
-	$("#3").hide();
-	$("#4").hide();
-	$("#5").hide();
-	
-	$(document).ready(function(){
-		choice ="one_way";
-		$("input:radio[name=group]").click(function() {
-			choice = $(this).val();	
-			console.log(choice);
-		});
-		choice1 ="PTR";
-		$("input:radio[name=group1]").click(function() {
-			choice1 = $(this).val();
-			console.log(choice1);
-		});
-	    $(".link a").click(function(){
-	    	   var linksId1 = $(this).attr('id').split('next');  
-	    	   if(linksId1[1]=="2"&&choice=="one_way"){
-	    		   linksId1[1]="3";
-	    	   } 
-	    	   if(linksId1[1]=="4"&&choice1=="PTK"){
-	    		   linksId1[1]="5";
-	    	   }
-	    	   
-	    	   console.log(linksId1);  
-	    	   if(linksId1[1]=="1"||linksId1[1]=="2"||linksId1[1]=="3"||linksId1[1]=="4"||linksId1[1]=="5"){
-		    		$("#1").hide(); 
-		    		$("#2").hide();
-	    			$("#3").hide();
-	    			$("#4").hide();
-	    			$("#5").hide();
-	    			$("#"+linksId1[1]).show();
-	    	   }
-	    });
-	});
-	//Date
-	$('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 15 // Creates a dropdown of 15 years to control year
-  });
-	
-	//modals
-	 $(document).ready(function(){
-	    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
-	    $('.modal').modal();
-	  });
-	</script>
+		  </div>
+</div>		  
+<!--footer  -->
+ <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+
 </body>
 </html>

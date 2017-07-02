@@ -22,7 +22,7 @@
 	<script src ="${adminjs}" type="text/javascript"></script>
 </head>
 <body>
-	<nav class="nav-extended">
+<nav class="nav-extended">
 	<div class="container">
 		<div class="nav-wrapper">
       <div class="row nav_row">
@@ -37,7 +37,7 @@
       		<img src="https://s-media-cache-ak0.pinimg.com/736x/64/fb/c9/64fbc98e98bebd0c06dc5f9345724658.jpg" alt="" class="circle profile">
    		 </li>
    		 <li><b>Rathana12</b></li>
-   		 <li> <button class="btn waves-effect waves-light" type="submit" name="action">Logout</button></li>
+   		 <li> <button class="btn waves-effect waves-light logout" type="submit" name="action">Logout</button></li>
          
       </ul>
 			</div>
@@ -653,7 +653,31 @@
   </div>
   <div id="test5" class="col s12">Test 4</div>
   </div>
-  
-        
+</div>
+<footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>        
 </body>
 </html>

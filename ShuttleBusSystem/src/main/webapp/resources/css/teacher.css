@@ -1,78 +1,175 @@
-@CHARSET "ISO-8859-1";
-img.responsive-img, video.responsive-video {
-    height: 50px !important;
-    width: 50px;
-    margin-top:2px;
-}
-.trtd {
-    padding: 0px 5px;
-    border: none;
-}
-#username,#batch_id{
-	font-size: 14px;
-	color: gray;
-}
-.profile{
-	margin:5px;
-	border: none;
-}
-nav {
-    color: gray;
-    background-color: #f5f5f5;
-}
-nav ul a {
-    color: gray;
-}
-.btn {
-    color: #fff;
-    background-color: #64B5F6 !important;
-    box-shadow:none;
-}
+		body{
+		  background-color: #fff!important;
+		  color:#64B5F6!important;
+		  padding: 0em !important;
+		  }
+		  #BookingSession{
+		  	background-color:#64B5F6;
+		  	padding-bottom: 50px;
+		  }
+		  .title{
+		  	color:#fff;
+		  }
+		  img.responsive-img, video.responsive-video {
+		    height: 50px !important;
+		    width: 50px;
+		    margin-top:2px;
+		}
+		.brand-logo{
+			color:#64B5F6;
+		}
+		#username{
+			font-size: 14px;
+			color: gray;
+		}
+		.profile{
+			margin:5px;
+			border: none;
+		}
+		nav {
+		    color: black;
+		    background-color: white;
+		}
+		nav ul a {
+		    color: gray;
+		}
+		h4{
+			margin: 0rem;
+			padding-top: 50px;
+		}
+		.btn {
+		    color: #fff;
+		    background-color: #64B5F6;
+		    box-shadow:none;
+		}
+		span.badge.new{
+			background-color: #64B5F6 !important;
+		}
 
+		table,tr,td,th{
+			border: 0.1px solid #d5d1d1;
+			text-align: center;
+			color:black;
+		}
+		label{
+			color: white;
+		}
+		
+		#One, #Round{
+			background-color: white;
+			margin: 20px 0px;
+			height: 50px;
+			color: black;
+		}
+		.input-field {
+		    margin-top: 0rem;
+		}
+		.bookOne{
+			width: 106%;
+			height: 100%;
 
-span.badge.new{
-	background-color: #64B5F6 !important;
-}
-[type="radio"]:not(:checked) + label, [type="radio"]:checked + label{
-	margin-top:15px;
-}
-.destination_icon{
-	line-height:20px;
-}
-.destination{
-	color:gray !important;
-}
-label{
-	color:gray;
-}
+		}
+		.bookRound{
+			background-color: #fb810b !important;
+			margin-top: 15px;
+			margin-right: 10px;
 
-#dateKtoP{
-	border:2px;
-}
+		}
+		.select-wrapper input.select-dropdown{
+			border-bottom: 0px solid #9e9e9e;
+		}
+		input[type=text]:not(.browser-default){
+		  
+			}
+		.material-icons {
+			line-height: 2;
+			}
+		body{
+		  background-color: #03a9f4;
+		  color: white;
+		  padding: 0em !important;
+		  }
+		  img.responsive-img, video.responsive-video {
+		    height: 50px !important;
+		    width: 50px;
+		    margin-top:2px;
+		}
+		.brand-logo{
+			background: #64B5F6;
+		}
+		#username{
+			font-size: 14px;
+			color: gray;
+		}
+		.profile{
+			margin:5px;
+			border: none;
+		}
+		nav {
+		    color: black;
+		    background-color: white;
+		}
+		nav ul a {
+		    color: gray;
+		}
+		.btn {
+		    color: #fff;
+		    background-color: #64B5F6 !important;
+		    box-shadow:none;
+		}
+		span.badge.new{
+			background-color: #64B5F6 !important;
+		}
 
-h5 {
-    margin: .5rem 0 1.4rem 0;
-    color:#64B5F6 !important;
-    }
- 
-.card{
-	margin: 4.5rem 0 1rem 0;
-}
-#schedule{
-	margin-top:50px;
-}
-.emergencyRequest{
-	margin-top:25px;
-}
-table,tr,td,th{
-	border: 1px solid gray;
-	text-align: center;
-}
-[type="radio"]:checked + label::after, .with-gap[type="radio"]:checked + label::after{
-	background-color:#64B5F6;
-}
+		table,tr,td,th{
+			border: 1px solid gray;
+			text-align: center;
+		}
+		label{
+			color: white;
+		}
+		[type="radio"]:not(:checked) + label::before, [type="radio"]:not(:checked) + label::after {
+  		  border: 2px solid #fffdfc;
+		}
+		[type="radio"]:checked + label::after, .with-gap[type="radio"]:checked + label::after {
+		    background-color: White;
+		}
+		[type="radio"]:checked + label::after, .with-gap[type="radio"]:checked + label::before, .with-gap[type="radio"]:checked + label::after {
+		    border: 2px solid #FFFFFF;
+		}
+		#One, #Round{
+			background-color: white;
+			margin: 20px 0px;
+			height: 50px;
+			color: black;
+		}
+		.input-field {
+		    margin-top: 0rem;
+		}
 
-
-
-
-
+		.select-wrapper input.select-dropdown{
+			border-bottom: 0px solid #9e9e9e;
+		}
+		input[type=text]:not(.browser-default){
+		    margin: 0em 0 0em 0;
+		    padding: 0em;
+		    border-bottom: 0px solid #9e9e9e;
+			width: 88%;
+			}
+		.material-icons {
+			line-height: 2;
+			}
+		.sch {
+		    font-size: 1.64rem;
+		    line-height: 100%;
+		    margin: 3rem 0 1.6rem 0;
+		}
+		.emergencyRequest{
+			margin:20px;
+		}
+		.page-footer {
+		    padding-top: 20px;
+		    background-color: #64B5F6;
+		}
+		
+		
