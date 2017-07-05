@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 
 
-import com.EntityClasses.User;
+import com.EntityClasses.User_Master;
 import com.HibernateUtil.HibernateUtil;
 import com.ModelClasses.retrieve;
 import com.ModelClasses.submit;
@@ -28,7 +28,7 @@ public class userDaoImpl implements usersDao{
 	    String name=model1.getName();
 	    String salary =model1.getSalary();
 	   
-	    User user=new User();
+	    User_Master user=new User_Master();
 		user.setUser_id(id);
 		user.setUser_name(name);
 		user.setUser_salary(salary);
@@ -51,7 +51,7 @@ public class userDaoImpl implements usersDao{
 		return model1;
     }
 
-    public boolean addUser2(User user) {
+    public boolean addUser2(User_Master user) {
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
@@ -72,8 +72,8 @@ public class userDaoImpl implements usersDao{
     }
     
     
-    public List<User> getAllUsers() {
-        List<User> users = new ArrayList<User>();
+    public List<User_Master> getAllUsers() {
+        List<User_Master> users = new ArrayList<User_Master>();
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try 
@@ -94,7 +94,7 @@ public class userDaoImpl implements usersDao{
     
     public retrieve getUserById(retrieve model1) {
        
-    	User user = null;
+    	User_Master user = null;
         Transaction trns = null;
         
         Integer id=model1.getId();
@@ -106,9 +106,9 @@ public class userDaoImpl implements usersDao{
             Query query = session.createQuery(queryString);
             query.setInteger("id", id);
             
-            user = (User) query.uniqueResult();
+            user = (User_Master) query.uniqueResult();
             
-            Integer id1=user.getUser_id();
+            Integer id1=user.getUser_id()
     	    String name=user.getUser_name();
     	    String salary =user.getUser_salary();
     	    
@@ -129,7 +129,7 @@ public class userDaoImpl implements usersDao{
    
     
     
-  public boolean deleteUser(User users) {
+  public boolean deleteUser(User_Master users) {
     	
     	Integer id1=0;
         Transaction trns = null;
@@ -161,7 +161,7 @@ public class userDaoImpl implements usersDao{
    
     
 
-    public void updateUser(User user) {
+    public void updateUser(User_Master user) {
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {

@@ -25,8 +25,8 @@ public class ControllerFile {
 	public ModelAndView Login(){
 		ModelAndView view =new ModelAndView("login");	
 		return view;
+		
 	}
-	
 	
 	@RequestMapping(value="/student", method = RequestMethod.GET)
 	public ModelAndView getStudent(){
@@ -38,6 +38,7 @@ public class ControllerFile {
 	public ModelAndView getTeacher(){
 		ModelAndView view =new ModelAndView("teacher");
 		return view;
+		
 	}
 	
 	
@@ -103,8 +104,6 @@ public class ControllerFile {
 	
 }
 	
-
-//=============================================================
 
 
 
