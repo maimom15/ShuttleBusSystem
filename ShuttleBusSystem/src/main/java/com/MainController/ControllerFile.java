@@ -48,6 +48,7 @@ public class ControllerFile {
 		String email = aut.getEmail();
 		String password = aut.getPassword();
 		String url = "";
+		
 		if(email.equals("admin@gmail.com")){
 			System.out.println(email);
 			System.out.println(password);
@@ -64,43 +65,44 @@ public class ControllerFile {
 			System.out.println(email);
 			System.out.println(password);
 			url= "student";
-			
-		}
-		else{
-			System.out.println(email);
-			System.out.println(password);
-			url= "driver";
-			
 		}
 		return url;
-	}
-	
-	@RequestMapping(value="/admin",method = RequestMethod.GET)
-	public ModelAndView Admin(){
-		ModelAndView view =new ModelAndView("admin");
+			
+		}
 		
-		return view;
-	}
+		@RequestMapping(value="/booking_service",method = RequestMethod.POST)
+		public @ResponseBody Boolean booking_service(@RequestBody Authentic aut[]){
+			System.out.println(aut[0].getEmail()+aut[1].getEmail());
+			
+		return true;
+		}
 	
-	@RequestMapping(value="/device",method = RequestMethod.GET)
-	public ModelAndView Device( HttpServletRequest request){
-			ModelAndView view =new ModelAndView("device");
-		if(request.getHeader("User-Agent").indexOf("Mobile") != -1) {
-		   view.addObject("device", "mobile");
-		  } else {
-		   view.addObject("device", "pc");
-		  }
-		return view;
-	}
-	
-	
-	@RequestMapping(value="/driver",method = RequestMethod.GET)
-	public ModelAndView Driver(){
-		ModelAndView view =new ModelAndView("driver");
-		view.addObject("name", "world");
-		return view;
-	}
-	
+		@RequestMapping(value="/admin",method = RequestMethod.GET)
+		public ModelAndView Admin(){
+			ModelAndView view =new ModelAndView("admin");
+			
+			return view;
+		}
+		
+		@RequestMapping(value="/device",method = RequestMethod.GET)
+		public ModelAndView Device( HttpServletRequest request){
+				ModelAndView view =new ModelAndView("device");
+			if(request.getHeader("User-Agent").indexOf("Mobile") != -1) {
+			   view.addObject("device", "mobile");
+			  } else {
+			   view.addObject("device", "pc");
+			  }
+			return view;
+		}
+		
+		
+		@RequestMapping(value="/driver",method = RequestMethod.GET)
+		public ModelAndView Driver(){
+			ModelAndView view =new ModelAndView("driver");
+			view.addObject("name", "world");
+			return view;
+		}
+		
 }
 	
 

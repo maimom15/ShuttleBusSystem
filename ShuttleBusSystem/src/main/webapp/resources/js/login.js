@@ -14,22 +14,7 @@ $(document).ready(function(){
 				data : JSON.stringify(submit),
 				timeout : 100000,
 				success : function(data) {
-					if(data=="admin"){
-						console.log(data);
-						document.location.href = '/ShuttleBusSystem/users/admin';
-					}	
-					else if(data=="teacher"){
-						console.log(data);
-						document.location.href = '/ShuttleBusSystem/users/teacher';
-					}	
-					else if(data=="student"){
-						console.log(data);
-						document.location.href = '/ShuttleBusSystem/users/student';
-					}	
-					else{
-						console.log(data);
-						document.location.href = '/ShuttleBusSystem/users/driver';
-					}	
+					document.location.href = '/ShuttleBusSystem/users/'+data;
 				},
 				error : function(e) {
 					console.log("ERROR: ", e);

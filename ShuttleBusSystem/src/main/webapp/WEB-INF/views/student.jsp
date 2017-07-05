@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- Compiled and minified CSS -->
@@ -14,18 +14,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
 
-	<spring:url value="/resources/js/pikaday.js" var="pikaday" />
-	<script src="${pikaday}" type="text/javascript"></script>
-	<spring:url value="/resources/js/jquery.js" var="jquery" />
-	<script src="${jquery}" type="text/javascript"></script>
-	<spring:url value="/resources/css/pikaday.css" var="pikadaycss" />
-	<link href="${pikadaycss}" rel="stylesheet" />
-	<spring:url value="/resources/css/site.css" var="site" />
-	<link href="${site}" rel="stylesheet" />
 	<spring:url value="/resources/js/teacher.js" var="teacherjs" />
 	<script src="${teacherjs}" type="text/javascript"></script>
 	<spring:url value="/resources/css/teacher.css" var="teacher" />
 	<link href="${teacher}" rel="stylesheet" />
+	
 	
 	
 	
@@ -53,63 +46,60 @@
 
 	  <form action="#">
 	    <span>
-	    	<input class="with-gap" name="group1" type="radio" id="test1" checked="checked" />
-	        <label for="test1">Round Ways</label>
+	    	<input class="with-gap" name="option_way" type="radio" id="roundWay" value="RoundWay" checked="checked" />
+	        <label for="roundWay">Round Ways</label>
 	    </span>
 	    <span>
-	    	<input class="with-gap" name="group1" type="radio" id="test2" />
-	        <label for="test2">One Way</label>
+	    	<input class="with-gap" name="option_way" type="radio" id="oneWay" value="OneWay"/>
+	        <label for="oneWay">One Way</label>
 	    </span>	  
 	  </form>
  
 	  <div id="Round" class="row">
 	  <div>
 	  	<div class="col s12 m6 l3">
-	   		<div class="input-field s6">      
-		      <select class="validate">
+	   		<div id="from_round" class="input-field s6">      
+		      <select id="fromDes_round" class="validate">
 		        <option value="" disabled selected>From</option>
-		        <option value="1">Kirirom</option>
-		        <option value="2">Phnom Penh</option>
+		        <option id="selectf1" value="Kirirom">Kirirom</option>
+		        <option id="selectf2" value="Phnom Penh">Phnom Penh</option>
 		      </select>
 		    </div>
 	   	</div>
-	    <div class="col s12 m6 l3">
-	    	<div class="input-field s6">      
-		      <select class="validate">
+	    <div  class="col s12 m6 l3">
+	    	<div id="to_round"  class="input-field s6">      
+		      <select id="toDes_round" class="validate">
 		        <option value="" disabled selected>To</option>
-		        <option value="1">Kirirom</option>
-		        <option value="2">Phnom Penh</option>
 		      </select>
 		    </div>
 	    </div>
-	    <div class="col s12 m6 l3"><input type="text" id="datepicker"></div>
-		<div class="col s12 m6 l3"><input type="text" id="datepicker"></div>
+	    <div class="col s12 m6 l3"><input type="date" class="datepicker"></div>
+		<div class="col s12 m6 l3"><input type="date" class="datepicker"></div>
 	  </div>
 	   	<div class="row">  		
-		<a class="right btn bookRound">button</a>
+		<a class="right btn bookRound bookNow">button</a>
 	   	</div>
 	  </div>
 	  <div id="One" class="row">
-		<div class="col s12 m6 l3">
-	   		<div class="input-field s6">      
-		      <select class="validate">
+	  	<div class="col s12 m6 l3">
+	   		<div id="from_one" class="input-field s6">      
+		      <select id="fromDes_one" class="validate">
 		        <option value="" disabled selected>From</option>
-		        <option value="1">Kirirom</option>
-		        <option value="2">Phnom Penh</option>
+		        <option id="selectf1" value="Kirirom">Kirirom</option>
+		        <option id="selectf2" value="Phnom Penh">Phnom Penh</option>
 		      </select>
 		    </div>
 	   	</div>
-	    <div class="col s12 m6 l3">
-	    	<div class="input-field s6">      
-		      <select class="validate">
+	    <div  class="col s12 m6 l3">
+	    	<div id="to_one"  class="input-field s6">      
+		      <select id="toDes_one" class="validate">
 		        <option value="" disabled selected>To</option>
-		        <option value="1">Kirirom</option>
-		        <option value="2">Phnom Penh</option>
 		      </select>
 		    </div>
 	    </div>
-	    <div class="col s12 m6 l3"><input type="text" id="datepicker"></div>
-		<div class="col s12 m6 l3"><a class="btn bookOne">Book Now</a></div>    
+
+	    <div class="col s12 m6 l3"><input type="date" class="datepicker"></div>
+		<div class="col s12 m6 l3"><a class="btn bookOne bookNow">Book Now</a></div>    
 </div>
 </div>
 </div>
@@ -339,7 +329,9 @@
 		  </div>
 </div>		  
 <!--footer  -->
+
  <footer class="page-footer">
+ 
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
@@ -364,5 +356,7 @@
             </div>
           </div>
         </footer>
+
 </body>
+
 </html>
