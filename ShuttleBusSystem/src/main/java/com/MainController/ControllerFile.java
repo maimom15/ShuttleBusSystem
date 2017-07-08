@@ -1,7 +1,10 @@
 package com.MainController;
 
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -9,7 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.DaoClasses.Destination;
+import com.DaoClasses.Destination_Implement;
 import com.EntityClasses.Authentic;
+import com.EntityClasses.Destination_Master;
+import com.ModelClasses.Teacher;
 import com.ServiceClasses.usersService;
 
 
@@ -40,7 +48,6 @@ public class ControllerFile {
 		return view;
 		
 	}
-	
 	
 	
 
@@ -101,6 +108,20 @@ public class ControllerFile {
 		view.addObject("name", "world");
 		return view;
 	}
+	
+	@RequestMapping(value="/booking")
+	public ModelAndView Booking(){
+			int i=0;
+		ModelAndView view = new ModelAndView("teacher");
+		
+		Destination_Implement dest = new Destination_Implement();
+		
+			dest.addBooking();
+			
+	
+		return view;
+	}
+	
 	
 }
 	

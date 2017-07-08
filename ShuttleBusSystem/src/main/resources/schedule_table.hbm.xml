@@ -12,7 +12,7 @@
 	     
 	     
           <!-- relationship with other-->
-        <many-to-one name="destination_id" class="com.EntityClasses.Destination_Table" fetch="select">
+        <many-to-one name="destination_id" class="com.EntityClasses.Destination_Master" fetch="select">
             <column name="destination_id" not-null="true" />
         </many-to-one>
         

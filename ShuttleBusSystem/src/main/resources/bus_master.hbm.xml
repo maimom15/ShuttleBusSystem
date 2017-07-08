@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
 
 <hibernate-mapping>
- 	<class name="com.EntityClasses.Role_Master" table="role_master">
+ 	<class name="com.EntityClasses.Bus_Master" table="role_master">
  	 	
  	   <id name="bus_id" type="string">
             <column name="bus_id" />
@@ -23,7 +23,7 @@
         <set name="passenger" table="passenger"
 				inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="bus_id" not-null="true" />
+                <column name="bus_id"/>
             </key>
             <one-to-many class="com.EntityClasses.Passenger" />
         </set>

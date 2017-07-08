@@ -16,7 +16,7 @@
             <column name="user_id" not-null="true" />
         </many-to-one>
          <many-to-one name="bus_id" class="com.EntityClasses.Bus_Master" fetch="select">
-            <column name="bus_id" not-null="true" />
+            <column name="bus_id" />
         </many-to-one>
        
         
@@ -28,10 +28,10 @@
             <column name="date_of_traval" not-null="true" />
         </property>
         <property name="seat_number" type="int">
-            <column name="seat_number" not-null="true" />
+            <column name="seat_number" />
         </property>
         <property name="ticket_qrcode" type="string">
-            <column name="ticket_qrcode" not-null="true" />
+            <column name="ticket_qrcode" />
         </property>
        
         

@@ -11,6 +11,12 @@ public class Destination_Master {
 	private String arrival_time;
 	
 	private Set<Passenger> passenger =new HashSet<Passenger>(0);
+	public Set<Passenger> getPassenger() {
+		return passenger;
+	}
+	public void setPassenger(Set<Passenger> passenger) {
+		this.passenger = passenger;
+	}
 	private Set<Schedule_Table> schedule_table =new HashSet<Schedule_Table>(0);
 	
 	
@@ -37,14 +43,6 @@ public class Destination_Master {
 	}
 	public void setArrival_time(String arrival_time) {
 		this.arrival_time = arrival_time;
-	}
-	
-	
-	public Set<Passenger> getPassenger() {
-		return passenger;
-	}
-	public void setPassenger(Set<Passenger> passenger) {
-		this.passenger = passenger;
 	}
 	
 	public Set<Schedule_Table> getSchedule_table() {
