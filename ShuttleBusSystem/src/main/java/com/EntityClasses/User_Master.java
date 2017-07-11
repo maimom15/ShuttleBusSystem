@@ -16,9 +16,18 @@ public class User_Master {
 	private String phone_number;
 	private int no_of_ticket;
 	
-	private Set<Passenger> passenger =new HashSet<Passenger>(0);
-	private Set<Ticket_Donation> ticket_donation =new HashSet<Ticket_Donation>(0);
-	private Set<Bus_Per_Schedule> bus_per_schedule =new HashSet<Bus_Per_Schedule>(0);
+	private Set<Passenger> passenger;
+	private Set<Ticket_Donation> ticket_donation ;
+	private Set<Bus_Per_Schedule> bus_per_schedule;
+	
+	
+	public User_Master(){
+		
+	}
+	public User_Master(String user_id){
+		this.user_id = user_id;
+	}
+	
 	
 	public Set<Passenger> getPassenger() {
 		return passenger;

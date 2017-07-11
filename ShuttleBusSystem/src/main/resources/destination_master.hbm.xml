@@ -6,24 +6,27 @@
  	 	
  	   <id name="destination_id" type="string">
             <column name="destination_id" />
-        </id>
+       </id>
         
-        
-        <property name="role_name" type="string">
-            <column name="role_name" not-null="true" />
+        <property name="destination_name" type="string">
+            <column name="destination_name" />
         </property>
-        
-        
-        
+      
+        <property name="departure_time" type="string">
+            <column name="departure_time" not-null="false" />
+        </property>
+        <property name="arrival_time" type="string">
+            <column name="arrival_time" not-null="false" />
+        </property>
         <set name="schedule_table" table="schedule_table"
-				inverse="true" lazy="true" fetch="select">
+				inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="destination_id" not-null="true" />
             </key>
             <one-to-many class="com.EntityClasses.Schedule_Table" />
         </set>
         <set name="passenger" table="passenger_table"
-				inverse="true" lazy="true" fetch="select">
+				inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="destination_id" not-null="true" />
             </key>

@@ -6,9 +6,10 @@ public class Passenger {
 	private User_Master user_id;
 	private Destination_Master destination_id;
 	private String date_of_travel;
-	private int seat_number;
+	private String seat_number;
 	private String ticket_qrcode;
 	private Bus_Master bus_id;
+	
 	
 	
 	public int getId() {
@@ -41,10 +42,10 @@ public class Passenger {
 	public void setDate_of_travel(String date_of_travel) {
 		this.date_of_travel = date_of_travel;
 	}
-	public int getSeat_number() {
+	public String getSeat_number() {
 		return seat_number;
 	}
-	public void setSeat_number(int seat_number) {
+	public void setSeat_number(String seat_number) {
 		this.seat_number = seat_number;
 	}
 	public String getTicket_qrcode() {

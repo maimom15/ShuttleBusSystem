@@ -1,7 +1,9 @@
 package com.MainController;
 
 
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.DaoClasses.Destination;
-import com.DaoClasses.Destination_Implement;
+import com.DaoClasses.TeacherDao;
+import com.DaoClasses.Teacher_Implement;
 import com.EntityClasses.Authentic;
 import com.EntityClasses.Destination_Master;
 import com.ModelClasses.Teacher;
@@ -22,7 +24,7 @@ import com.ServiceClasses.usersService;
 
 
 @Controller
-@RequestMapping("users")
+
 public class ControllerFile {
 		
 	@Autowired
@@ -114,11 +116,11 @@ public class ControllerFile {
 			int i=0;
 		ModelAndView view = new ModelAndView("teacher");
 		
-		Destination_Implement dest = new Destination_Implement();
-		
-			dest.addBooking();
+		Teacher_Implement dest = new Teacher_Implement();
+		Set <Teacher> teacher = new HashSet<Teacher>();
+			dest.addBooking(teacher);
 			
-	
+			
 		return view;
 	}
 	

@@ -6,9 +6,7 @@ import java.util.Set;
 public class Batch_Master {
 	private String Batch_id;
 	private int Batch_number;
-	private Set<User_Master> user_master =
-			new HashSet<User_Master>(0);
-			
+	private Set<User_Master> user_master;
 
 	public Set<User_Master> getUser_master() {
 		return user_master;

@@ -8,15 +8,19 @@ public class Schedule_Table {
 	private String schedule_id;
 	private String date_of_travel;
 	private Destination_Master destination_id;
-	private int total_availble_seats;
+
+	private int total_available_seats;
 	private int customer_seats;
 	private int student_seats;
 	private int staff_seats;
 	private int remaining_seats;
 	
-	private Set<Bus_Report_Table> bus_report_table =new HashSet<Bus_Report_Table>(0);
-	private Set<Bus_Per_Schedule> bus_per_schedule =new HashSet<Bus_Per_Schedule>(0);
+	private Set<Bus_Report_Table> bus_report_table;
+	private Set<Bus_Per_Schedule> bus_per_schedule;
 	
+	public Schedule_Table(){
+		
+	}
 	
 	public String getSchedule_id() {
 		return schedule_id;
@@ -36,35 +40,35 @@ public class Schedule_Table {
 	public void setDestination_id(Destination_Master destination_id) {
 		this.destination_id = destination_id;
 	}
-	public int getTotal_availble_seat() {
-		return total_availble_seats;
+	public int getTotal_available_seats() {
+		return total_available_seats;
 	}
-	public void setTotal_availble_seat(int total_availble_seat) {
-		this.total_availble_seats = total_availble_seat;
+	public void setTotal_available_seats(int total_available_seats) {
+		this.total_available_seats = total_available_seats;
 	}
-	public int getCustomer_seat() {
+	public int getCustomer_seats() {
 		return customer_seats;
 	}
-	public void setCustomer_seat(int customer_seat) {
-		this.customer_seats = customer_seat;
+	public void setCustomer_seats(int customer_seats) {
+		this.customer_seats = customer_seats;
 	}
-	public int getStudent_seat() {
+	public int getStudent_seats() {
 		return student_seats;
 	}
-	public void setStudent_seat(int student_seat) {
-		this.student_seats = student_seat;
+	public void setStudent_seats(int student_seats) {
+		this.student_seats = student_seats;
 	}
-	public int getStaff_seat() {
+	public int getStaff_seats() {
 		return staff_seats;
 	}
-	public void setStaff_seat(int staff_seat) {
-		this.staff_seats = staff_seat;
+	public void setStaff_seats(int staff_seats) {
+		this.staff_seats = staff_seats;
 	}
-	public int getRemaining_seat() {
+	public int getRemaining_seats() {
 		return remaining_seats;
 	}
-	public void setRemaining_seat(int remaining_seat) {
-		this.remaining_seats = remaining_seat;
+	public void setRemaining_seats(int remaining_seats) {
+		this.remaining_seats = remaining_seats;
 	}
 	public Set<Bus_Report_Table> getBus_report_table() {
 		return bus_report_table;

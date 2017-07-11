@@ -12,7 +12,7 @@
         </property>
         
         <set name="user_master" table="user_master"
-				inverse="true" lazy="true" fetch="select">
+				inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="batch_id" not-null="true" />
             </key>

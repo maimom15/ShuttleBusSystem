@@ -6,12 +6,14 @@ import java.util.Set;
 public class Bus_Master {
 
 	private String bus_id;
-	private String model;
+	private String bus_model;
+	
 	private String plate_number;
-	private int number_of_seats;
+	private int no_of_seat;
+	
 	private String bus_image;
 	
-	private Set<Passenger> passenger =new HashSet<Passenger>(0);
+	private Set<Passenger> passenger;
 	
 	public String getBus_id() {
 		return bus_id;
@@ -19,30 +21,15 @@ public class Bus_Master {
 	public void setBus_id(String bus_id) {
 		this.bus_id = bus_id;
 	}
-	public String getModel() {
-		return model;
-	}
-	public void setModel(String model) {
-		this.model = model;
-	}
+	
 	public String getPlate_number() {
 		return plate_number;
 	}
 	public void setPlate_number(String plate_number) {
 		this.plate_number = plate_number;
 	}
-	public int getNumber_of_seat() {
-		return number_of_seats;
-	}
-	public void setNumber_of_seat(int number_of_seat) {
-		this.number_of_seats = number_of_seat;
-	}
-	public String getBus_img() {
-		return bus_image;
-	}
-	public void setBus_img(String bus_img) {
-		this.bus_image = bus_img;
-	}
+	
+	
 
 	public Set<Passenger> getPassenger() {
 		return passenger;
@@ -50,5 +37,23 @@ public class Bus_Master {
 	public void setPassenger(Set<Passenger> passenger) {
 		this.passenger = passenger;
 	}
-	
+	public String getBus_model() {
+		return bus_model;
+	}
+	public void setBus_model(String bus_model) {
+		this.bus_model = bus_model;
+	}
+	public int getNo_of_seat() {
+		return no_of_seat;
+	}
+	public void setNo_of_seat(int no_of_seat) {
+		this.no_of_seat = no_of_seat;
+	}
+
+	public String getBus_image() {
+		return bus_image;
+	}
+	public void setBus_image(String bus_image) {
+		this.bus_image = bus_image;
+	}
 }

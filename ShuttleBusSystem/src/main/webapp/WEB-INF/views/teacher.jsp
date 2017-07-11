@@ -9,19 +9,16 @@
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
-
+	<spring:url value="/resources/js/template7.min.js" var="template7" />
+	<script src="${template7}" type="text/javascript"></script>
 	<spring:url value="/resources/js/teacher.js" var="teacherjs" />
 	<script src="${teacherjs}" type="text/javascript"></script>
 	<spring:url value="/resources/css/teacher.css" var="teacher" />
 	<link href="${teacher}" rel="stylesheet" />
-	
-	
-	
-	
+		
 </head>
 <body>
 <!--Header-->
@@ -30,11 +27,13 @@
       <div class="nav-wrapper container">
         <a href="#!" class="brand-logo">Logo</a>
         <ul class="right hide-on-med-and-down">
-          <li><p>No.of Ticket available: <span class="new badge" data-badge-caption="/18">4</span></p></li>
+          <li><a class="btn" id="emer" href="#emergencyModals">Request</a></li>
           <li><a href="#"><img src="https://s-media-cache-ak0.pinimg.com/736x/64/fb/c9/64fbc98e98bebd0c06dc5f9345724658.jpg" alt="" class="responsive-img circle"></a></li>
-          <li><a class="username">Mai Mom</a></li>
-          <li><a class="btn">Log out</a></li>
         </ul>
+        <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       </div>
     </nav>
   </div>
@@ -42,8 +41,7 @@
 <div id="BookingSession">
 <div  class="container"> 
 	<h4 class="center-align title"><b>vKirirom Shuttle Bus</b></h4>
-	<p class="center-align title">Visit our restaurant and savour our dishes special our chef has to offer and or stay in one of our innovative rooms</p>
-
+	<p class="center-align title">Visit our restaurant and our dishes special our chef has to offer and or stay in one of our innovative rooms</p>
 	  <form action="#">
 	    <span>
 	    	<input class="with-gap" name="option_way" type="radio" id="roundWay" value="RoundWay" checked="checked" />
@@ -73,11 +71,11 @@
 		      </select>
 		    </div>
 	    </div>
-	    <div class="col s12 m6 l3"><input type="date" class="datepicker"></div>
-		<div class="col s12 m6 l3"><input type="date" class="datepicker"></div>
+	    <div class="col s12 m6 l3"><input id="goDate_round" type="date" class="datepicker" placeholder="From Date"></div>
+		<div class="col s12 m6 l3"><input id="backDate_round" type="date" class="datepicker" placeholder="To Date"></div>
 	  </div>
 	   	<div class="row">  		
-		<a class="right btn bookRound bookNow">button</a>
+		<a class="right btn bookRound bookNow">Book Now</a>
 	   	</div>
 	  </div>
 	  <div id="One" class="row">
@@ -98,73 +96,16 @@
 		    </div>
 	    </div>
 
-	    <div class="col s12 m6 l3"><input type="text" id="datepicker" class="fromDate" ></div>
+	    <div class="col s12 m6 l3"><input id="goDate_one" type="date" class="datepicker" placeholder="Date"></div>
 		<div class="col s12 m6 l3"><a class="btn bookOne bookNow">Book Now</a></div>    
-</div>
-</div>
+		</div>
+	</div>
 </div>
 <!-- Schedule  -->
-<div id="ScheduleSession">
-	<div class="container" >
-   	 <h5 class="center sch">Schedule for this Week</h5>
-      <table class="centered highlight">
-        <thead>
-          <tr>
-              <th>Date</th>
-              <th>Bus ID</th>
-              <th>Bus Driver</th>
-              <th>Destination</th>
-              <th>Total Seats</th>
-              <th>Customer</th>
-              <th>Staff</th>
-              <th>Student</th>
-              <th>Remaining</th>
-              <th>Passenger</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>Fri, 09/june/2017</td>
-            <td>B001</td>
-            <td>Mr.Heng</td>
-            <td>Kirirom to Phnom Penh</td>
-            <td>24</td>
-            <td>02</td>
-            <td>00</td>
-            <td>02</td>
-            <td>20</td>
-            <td><a href="#modal1">detail</a></td>
-          </tr>
-          <tr>
-            <td>Fri, 09/june/2017</td>
-            <td>B001</td>
-            <td>Mr.Heng</td>
-            <td>Kirirom to Phnom Penh</td>
-            <td>24</td>
-            <td>02</td>
-            <td>00</td>
-            <td>02</td>
-            <td>20</td>
-            <td><a href="#modal1">detail</a></td>
-          </tr>
-          <tr>
-            <td>Fri, 09/june/2017</td>
-            <td>B001</td>
-            <td>Mr.Heng</td>
-            <td>Kirirom to Phnom Penh</td>
-            <td>24</td>
-            <td>02</td>
-            <td>00</td>
-            <td>02</td>
-            <td>20</td>
-            <td><a href="#modal1">detail</a></td>
-          </tr>
-        </tbody>
-      </table>
-      <!-- Modal Structure -->
-	  <div id="modal1" class="modal modal-fixed-footer">
-		    <div class="modal-content">
+<div id="getSchedule"></div>
+<!-- Modal Passenger Detail -->
+<div id="modal1" class="modal modal-fixed-footer">
+	<div class="modal-content">
 		      <h5 class="center">List of Passengers</h5>
 		      <table class="centered highlight">
 		        <thead>
@@ -178,104 +119,16 @@
 		              <th>Status</th>
 		          </tr>
 		        </thead>
-		
-		        <tbody>
-		          <tr>
-		          	  <td>1</td>
-		              <td>KITSE1410</td>
-		              <td>Heng Visal</td>
-		              <td>01</td>
-		              <td>Student</td>
-		              <td>01</td>
-		              <td><a class="waves-effect waves-light btn">Cancel</a></td>
-		          </tr>
-		          <tr>
-		          	  <td>2</td>
-		              <td>KITSE1410</td>
-		              <td>Heng Visal</td>
-		              <td>01</td>
-		              <td>Student</td>
-		              <td>01</td>
-		              <td><a class="waves-effect waves-light btn">Cancel</a></td>
-		          </tr>
-		          <tr>
-		          	  <td>3</td>
-		              <td>KITSE1410</td>
-		              <td>Heng Visal</td>
-		              <td>01</td>
-		              <td>Student</td>
-		              <td>01</td>
-		              <td><a class="waves-effect waves-light btn">Cancel</a></td>
-		          </tr>
-		          <tr>
-		          	  <td>4</td>
-		              <td>KITSE1410</td>
-		              <td>Heng Visal</td>
-		              <td>01</td>
-		              <td>Student</td>
-		              <td>01</td>
-		              <td><a class="waves-effect waves-light btn">Cancel</a></td>
-		          </tr>
-		          <tr>
-		          	  <td>5</td>
-		              <td>KITSE1410</td>
-		              <td>Heng Visal</td>
-		              <td>01</td>
-		              <td>Student</td>
-		              <td>01</td>
-		              <td><a class="waves-effect waves-light btn">Cancel</a></td>
-		          </tr>
-		          <tr>
-		          	  <td>6</td>
-		              <td>KITSE1410</td>
-		              <td>Heng Visal</td>
-		              <td>01</td>
-		              <td>Student</td>
-		              <td>01</td>
-		              <td><a class="waves-effect waves-light btn">Cancel</a></td>
-		          </tr>
-		          <tr>
-		          	  <td>7</td>
-		              <td>KITSE1410</td>
-		              <td>Heng Visal</td>
-		              <td>01</td>
-		              <td>Student</td>
-		              <td>01</td>
-		              <td><a class="waves-effect waves-light btn">Cancel</a></td>
-		          </tr>
-		          <tr>
-		          	  <td>8</td>
-		              <td>KITSE1410</td>
-		              <td>Heng Visal</td>
-		              <td>01</td>
-		              <td>Student</td>
-		              <td>01</td>
-		              <td><a class="waves-effect waves-light btn">Cancel</a></td>
-		          </tr>
-		          <tr>
-		          	  <td>9</td>
-		              <td>KITSE1410</td>
-		              <td>Heng Visal</td>
-		              <td>01</td>
-		              <td>Student</td>
-		              <td>01</td>
-		              <td><a class="waves-effect waves-light btn">Cancel</a></td>
-		          </tr>
-		        </tbody>
+		        <tbody id="getPassenger"></tbody>
 		      </table>
-		    </div>
-		    <div class="modal-footer">
-		      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-		    </div>
-		  </div>
-         
-      <div class="row">
-      <div class="col s12 emergencyRequest"> 
-          <a id="emer" href="#emergencyModals">Request Emergency Booking</a></div>
-      </div>
-       <!-- Emergency -->
-       <!-- Modal Structure -->
-		<div id="emergencyModals" class="modal modal-fixed-footer">
+	</div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+	</div>	    
+</div>		    
+
+<!-- Modal Structure Emergency-->
+<div id="emergencyModals" class="modal modal-fixed-footer">
 		    <div class="modal-content">
 		      <h5 class="center">Schedule for this Week</h5>
 			      <table class="centered highlight">
@@ -290,46 +143,14 @@
 			              <th>Passenger</th>
 			          </tr>
 			        </thead>
-			
-			        <tbody>
-			          <tr>
-			            <td>Fri, 09/june/2017</td>
-			            <td>B001</td>
-			            <td>Mr.Heng</td>
-			            <td>Kirirom to Phnom Penh</td>
-			            <td>24</td>
-			            <td>4</td>
-			            <td><a class="btn" href="#">Book</a></td>
-			          </tr>
-			          <tr>
-			            <td>Fri, 09/june/2017</td>
-			            <td>B001</td>
-			            <td>Mr.Heng</td>
-			            <td>Kirirom to Phnom Penh</td>
-			            <td>24</td>
-			            <td>4</td>		  
-			            <td><a class="btn" href="#">Book</a></td>
-			          </tr>
-			          <tr>
-			            <td>Fri, 09/june/2017</td>
-			            <td>B001</td>
-			            <td>Mr.Heng</td>
-			            <td>Kirirom to Phnom Penh</td>
-			            <td>24</td>
-			            <td>4</td>
-			            <td><a class="btn" href="#">Book</a></td>
-			          </tr>
-			        </tbody>
+			        <tbody id="getEmergency"></tbody>
 			      </table>
 		    </div>
 		    <div class="modal-footer">
 		      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
 		    </div>
 		  </div>  
-		  </div>
-</div>		  
 <!--footer  -->
-
  <footer class="page-footer">
  
           <div class="container">
@@ -355,18 +176,76 @@
             <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
             </div>
           </div>
-        </footer>
-<select name="column_select" id="column_select">
-    <option value="col1">1 column</option>
-    <option value="col2">2 column</option>
-    
-</select>
+</footer>
+<!-- template -->
+<script id="template" type="text/template7">
+  <div id="ScheduleSession">
+ 	<div class="container" >
+   	 <h5 class="center sch">Schedule for this Week</h5>
+      <table class="centered highlight">
+        <thead>
+          <tr>
+              <th>Date</th>
+              <th>Bus ID</th>
+              <th>Bus Driver</th>
+              <th>Destination</th>
+              <th>Total Seats</th>
+              <th>Customer</th>
+              <th>Staff</th>
+              <th>Student</th>
+              <th>Remaining</th>
+              <th>Passenger</th>
+          </tr>
+        </thead>
+        <tbody>
+		{{#each schedule}}
+			<tr>
+            <td>Fri, 09/june/2017</td>
+            <td>B001</td>
+            <td>Mr.Heng</td>
+            <td>Kirirom to Phnom Penh</td>
+            <td>24</td>
+            <td>02</td>
+            <td>00</td>
+            <td>02</td>
+            <td>20</td>
+            <td><a href="#modal1">detail</a></td>
+          </tr>
+  		{{/each}}
+          
+        </tbody>
+      </table>
+	</div>
+	</div>		  
+</script>
 
-<div id="ll">
-<select name="layout_select" id="layout_select" > 
-    <option value="none" id="ii">none</option>
-</select>
-</div>
+<script id="modalPassenger" type="text/template7">
+{{#each schedule}}
+<tr>
+	<td>1</td>
+	<td>KITSE1410</td>
+    <td>Heng Visal</td>
+	<td>01</td>
+	<td>Student</td>
+	<td>01</td>
+	<td><a class="btn">Cancel</a></td>	
+</tr>              
+{{/each}}
+</script>
+
+<script id="modale_emergency" type="text/template7">
+{{#each schedule}}
+	<tr >
+		<td>Fri, 09/june/2017</td>
+		<td>B001</td>
+		<td>Mr.Heng</td>
+		<td>Kirirom to Phnom Penh</td>
+		<td>24</td>
+		<td>4</td>
+		<td><a class="btn" href="#">Book</a></td>
+	</tr>              
+{{/each}}
+</script>
+
 </body>
-
 </html>

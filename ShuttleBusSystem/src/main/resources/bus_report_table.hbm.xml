@@ -19,7 +19,7 @@
         
 	
 	     <!-- entity -->
-        <property name="actual_departure_time" type="int">
+        <property name="actual_departure_time" type="string">
             <column name="actual_departure_time" not-null="true" />
         </property>
         <property name="actual_arrival_time" type="string">
@@ -28,8 +28,8 @@
         <property name="total_time_spent" type="float">
             <column name="total_time_spent" not-null="true" />
         </property>
-         <property name="total_fuel_spent" type="float">
-            <column name="total_fuel_spent" not-null="true" />
+         <property name="fuel_spent" type="float">
+            <column name="fuel_spent" not-null="true" />
         </property>
          <property name="distance" type="float">
             <column name="distance" not-null="true" />

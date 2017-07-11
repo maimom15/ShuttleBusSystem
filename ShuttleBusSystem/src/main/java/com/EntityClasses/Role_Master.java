@@ -7,8 +7,8 @@ public class Role_Master {
 
 	private String role_id;
 	private String role_name;
-	private Set<User_Master> user_master =
-			new HashSet<User_Master>(0);
+	
+	private Set<User_Master> user_master;
 	
 	public Set<User_Master> getUser_master() {
 		return user_master;
@@ -26,6 +26,7 @@ public class Role_Master {
 	public String getRole_name() {
 		return role_name;
 	}
+
 	public void setRole_name(String role_name) {
 		this.role_name = role_name;
 	}

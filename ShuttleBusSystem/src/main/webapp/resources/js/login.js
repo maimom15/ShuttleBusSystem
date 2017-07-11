@@ -3,33 +3,18 @@ $(document).ready(function(){
       var email = $("#username").val();
       var password = $("#password").val();      
       
-      	if(validateEmail(email) && validatePassword(password)){
+      	if(true){
       		 submit = {};
       		 submit["email"] = email;
       		 submit["password"] = password;
       		$.ajax({
-				type : "POST",
+				type : "GET",
 				contentType : "application/json",
-				url : "login_service",
-				data : JSON.stringify(submit),
+				url : "api_passenger_table",
 				timeout : 100000,
 				success : function(data) {
-					if(data=="admin"){
-						console.log(data);
-						document.location.href = '/ShuttleBusSystem/users/admin';
-					}	
-					else if(data=="teacher"){
-						console.log(data);
-						document.location.href = '/ShuttleBusSystem/users/teacher';
-					}	
-					else if(data=="student"){
-						console.log(data);
-						document.location.href = '/ShuttleBusSystem/users/student';
-					}	
-					else{
-						console.log(data);
-						document.location.href = '/ShuttleBusSystem/users/driver';
-					}	
+					//document.location.href = '/ShuttleBusSystem/users/'+data;
+					console.log(data);
 				},
 				error : function(e) {
 					console.log("ERROR: ", e);

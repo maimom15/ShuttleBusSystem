@@ -16,10 +16,10 @@
         
          
        
-        <property name="donation_to" type="string">
-            <column name="donation_to" not-null="true" />
+        <property name="donate_to" type="string">
+            <column name="donate_to" not-null="true" />
         </property>
-        <property name="receive_from" type="int">
+        <property name="receive_from" type="string">
             <column name="receive_from" not-null="true" />
         </property>
         

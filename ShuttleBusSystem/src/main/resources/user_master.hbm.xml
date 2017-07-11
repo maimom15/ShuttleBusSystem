@@ -35,8 +35,8 @@
         <property name="email" type="string">
             <column name="email" not-null="true" />
         </property>
-        <property name="phone" type="string">
-            <column name="phone" not-null="true" />
+        <property name="phone_number" type="string">
+            <column name="phone_number" not-null="true" />
         </property>
         <property name="no_of_ticket" type="int">
             <column name="no_of_ticket" not-null="true" />
@@ -45,7 +45,7 @@
         
          <!-- other relationship with-->
         <set name="passenger" table="passenger_table"
-				inverse="true" lazy="true" fetch="select">
+				inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="user_id" not-null="true" />
             </key>
@@ -53,7 +53,7 @@
         </set>
         
         <set name="ticket_donation" table="ticket_donation"
-				inverse="true" lazy="true" fetch="select">
+				inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="user_id" not-null="true" />
             </key>
@@ -61,7 +61,7 @@
         </set>
         
         <set name="bus_per_schedule" table="bus_per_schedule"
-				inverse="true" lazy="true" fetch="select">
+				inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="user_id" not-null="true" />
             </key>
